@@ -1,0 +1,75 @@
+<Window x:Class="Win11Tools.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Win11Tools"
+        mc:Ignorable="d"
+        Title="Win11小工具" Height="450" Width="600" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TabControl Margin="10">
+            <TabItem Header="显示方向">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <TextBlock Grid.Row="0" Text="显示方向控制" FontSize="16" FontWeight="Bold" Margin="0,0,0,10"/>
+                    
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,10">
+                        <Button x:Name="btnRotate0" Content="正常 (0°)" Width="100" Height="40" Margin="5" Click="btnRotate0_Click"/>
+                        <Button x:Name="btnRotate90" Content="顺时针 (90°)" Width="100" Height="40" Margin="5" Click="btnRotate90_Click"/>
+                        <Button x:Name="btnRotate180" Content="倒置 (180°)" Width="100" Height="40" Margin="5" Click="btnRotate180_Click"/>
+                        <Button x:Name="btnRotate270" Content="逆时针 (270°)" Width="100" Height="40" Margin="5" Click="btnRotate270_Click"/>
+                    </StackPanel>
+                    
+                    <GroupBox Grid.Row="2" Header="快捷键设置" Margin="0,10">
+                        <Grid Margin="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="正常 (0°):" VerticalAlignment="Center" Margin="5"/>
+                            <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtHotkey0" IsReadOnly="True" Margin="5" Text="Ctrl+Alt+0"/>
+                            <Button Grid.Row="0" Grid.Column="2" x:Name="btnSetHotkey0" Content="设置" Width="60" Margin="5" Click="btnSetHotkey0_Click"/>
+                            
+                            <TextBlock Grid.Row="1" Grid.Column="0" Text="顺时针 (90°):" VerticalAlignment="Center" Margin="5"/>
+                            <TextBox Grid.Row="1" Grid.Column="1" x:Name="txtHotkey90" IsReadOnly="True" Margin="5" Text="Ctrl+Alt+9"/>
+                            <Button Grid.Row="1" Grid.Column="2" x:Name="btnSetHotkey90" Content="设置" Width="60" Margin="5" Click="btnSetHotkey90_Click"/>
+                            
+                            <TextBlock Grid.Row="2" Grid.Column="0" Text="倒置 (180°):" VerticalAlignment="Center" Margin="5"/>
+                            <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtHotkey180" IsReadOnly="True" Margin="5" Text="Ctrl+Alt+8"/>
+                            <Button Grid.Row="2" Grid.Column="2" x:Name="btnSetHotkey180" Content="设置" Width="60" Margin="5" Click="btnSetHotkey180_Click"/>
+                            
+                            <TextBlock Grid.Row="3" Grid.Column="0" Text="逆时针 (270°):" VerticalAlignment="Center" Margin="5"/>
+                            <TextBox Grid.Row="3" Grid.Column="1" x:Name="txtHotkey270" IsReadOnly="True" Margin="5" Text="Ctrl+Alt+7"/>
+                            <Button Grid.Row="3" Grid.Column="2" x:Name="btnSetHotkey270" Content="设置" Width="60" Margin="5" Click="btnSetHotkey270_Click"/>
+                        </Grid>
+                    </GroupBox>
+                    
+                    <CheckBox Grid.Row="3" x:Name="chkStartWithWindows" Content="开机自动启动" Margin="0,10,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="关于">
+                <StackPanel Margin="10">
+                    <TextBlock Text="Win11小工具" FontSize="18" FontWeight="Bold"/>
+                    <TextBlock Text="版本: 1.0.0" Margin="0,10,0,0"/>
+                    <TextBlock Text="一个整合多种实用功能的Win11小工具集合" Margin="0,10,0,0" TextWrapping="Wrap"/>
+                    <TextBlock Text="当前功能:" Margin="0,10,0,0" FontWeight="Bold"/>
+                    <TextBlock Text="- 快速切换笔记本电脑显示方向" Margin="10,5,0,0"/>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
